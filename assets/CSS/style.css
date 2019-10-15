@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(218, 218, 218);
+}
+
+.container{
+    border-bottom: solid rgb(19, 68, 114) 2px;
+}
+
+.my-info-area{
+    background-color: rgb(24, 113, 187);
+    border: solid rgb(19, 68, 114) 2px;
+    border-bottom: none;
+    padding-bottom: 20px;
+}
+
+.posts-area{
+    background-color: white;
+}
+
+.info-area-font{
+    color: white;
+    margin-bottom: 4px;
+}
+
+.post-area-header{
+    color: rgb(143, 143, 143);
+    margin-top: 20px;
+}
+
+.thumbnail-img{
+    margin-top: 30px;
+    border: solid white 2px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.row-input, .row-button{
+    margin-bottom: 20px;
+}
+
+#submit-btn{
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(34,90,164,1) 0%, rgba(62,192,218,1) 100%);
+    color: white;
+    border: solid rgb(19, 68, 114) 1px ;
+}
+
+.col-4, .col-8{
+    padding-left: 30px;
+}
+
+.date-created{
+    color: gray;
+    font-size: 14px;
+}
+
+.post-content{
+    color: rgb(18, 149, 236);
+    font-size: 25px
+}
