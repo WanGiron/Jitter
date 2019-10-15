@@ -23,7 +23,7 @@
                 placeholder="write your blog"></textarea>
         </div>
         <div class="row row-button">
-            <button id="submit-btn">JITTER IT!</button>
+            <button id="submit-btn" onclick="sendData()">JITTER IT!</button>
         </div>
         <div class="row">
             <div class="col-8 posts-area">
@@ -43,65 +43,8 @@
     </div>
 </body>
 
-<script>
-    var HttpClient = function () {
-        this.get = function (aUrl, aCallback) {
-            var anHttpRequest = new XMLHttpRequest();
-            anHttpRequest.onreadystatechange = function () {
-                if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                    aCallback(anHttpRequest.responseText);
-            }
-            anHttpRequest.open("GET", aUrl, true);
-            anHttpRequest.send(null);
-        }
-    }
-
-    var client = new HttpClient();
-    client.get('gettheposts', function (response) {
-        console.log('test here' + response);
-        var results = JSON.parse(response);
-        var posts = results.length;
-        document.getElementById('total').innerHTML = 'Total Posts: '+ posts;
-        console.log(results);
-        results.map(res => {
-            var ptag = document.createElement('P');
-            ptag.setAttribute("class", "post-content");
-            var ptag2 = document.createElement('P');
-            ptag2.setAttribute("class", "date-created");
-            var hr = document.createElement('hr');
-            var node = document.createTextNode(res.my_blogs);
-            var node2 = document.createTextNode(res.date_created);
-            ptag.appendChild(node);
-            ptag2.appendChild(node2);
-            console.log(ptag);
-            var div2 = document.createElement('div');
-            var div = document.getElementById('get-posts');
-            div2.appendChild(ptag);
-            div2.appendChild(ptag2);
-            div2.appendChild(hr);
-            div.prepend(div2);
-            
-        })
-    });
+<script src="script.js">
+   
 </script>
-
-
-<!-- <script>
-
-const Http = new XMLHttpRequest();
-const url='/gettheposts';
-Http.open("GET", url);
-Http.send();
-Http.onreadystatechange = (e) => {
-  console.log("test"+ Http.responseText)
-e.map(res => {
-    var ptag = document.createElement("p");
-    var node = document.createTextNode(res.my_blogs);
-    ptag.appendChild(node);
-    var div = document.getElementById('get-pots');
-    div.appendChild(ptag);
-})
-}
-</script> -->
 
 </html>

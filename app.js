@@ -31,11 +31,11 @@ db.connect(function (err) {
     console.log('database connected!');
 })
 
-// to insert our values to db // 
+// to insert posts to db // 
 app.get('/postblog', function (req, res) {
-
+console.log(req.body);
     var post = {
-        my_blogs: "It is a long established fact that a reader will be distracted by the readable content of a page when looking",
+        my_blogs: req.body.my_blogs
     }
 
     var sql = 'INSERT INTO blog_body SET ?';
@@ -43,12 +43,10 @@ app.get('/postblog', function (req, res) {
         if (err) throw err;
         console.log(result);
         res.send('blog created');
-
     })
-
 })
 
-//to get posts from db //
+//to get all posts from db //
 app.get('/gettheposts', function (rep, res) {
     var sql = 'SELECT * FROM blog_body';
     db.query(sql, function (err, results) {
@@ -58,7 +56,7 @@ app.get('/gettheposts', function (rep, res) {
     })
 })
 
-
+//server setup //
 app.listen('3000', function () {
     console.log('listening on port 3000');
 })
