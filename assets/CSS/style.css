@@ -61,6 +61,14 @@ body{
     font-size: 25px
 }
 
+.main-header{
+    margin-left: 0px;
+    font-size: 60px;
+    color: rgb(24, 113, 187);
+    font-weight: bolder;
+    text-shadow: -3px -3px 0 rgb(255, 255, 255), 3px -3px 0 rgb(255, 255, 255), -3px 3px 0 rgb(255, 255, 255), 3px 3px 0 rgb(255, 255, 255);
+}
+
 
 
 @media screen and (max-width: 768px) {
