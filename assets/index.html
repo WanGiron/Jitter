@@ -11,19 +11,21 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/CSS/style.css">
-
-
+    <script src="//cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery/3.1.0/jquery.min.js"> </script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="script.js"></script>
     <title>Jitter</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row row-input">
-            <textarea name="text" id="blog-input" class="col-6" cols="30" rows="6"
-                placeholder="write your blog"></textarea>
+            <textarea name="myextarea" id="editor1" class="col-6" cols="30" rows="6" placeholder="write your blog"
+                name="editor1"></textarea>
         </div>
         <div class="row row-button">
-            <button id="submit-btn" onclick="sendData()">JITTER IT!</button>
+            <button id="submit-btn" onclick="sendPost()">JITTER IT!</button>
         </div>
         <div class="row">
             <div class="col-8 posts-area">
@@ -42,9 +44,8 @@
         </div>
     </div>
 </body>
-
-<script src="script.js">
-   
+<script>
+    CKEDITOR.replace('editor1');
 </script>
 
 </html>
