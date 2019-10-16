@@ -24,11 +24,11 @@ body{
 
 .post-area-header{
     color: rgb(143, 143, 143);
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .thumbnail-img{
-    margin-top: 30px;
+    margin-top: 40px;
     border: solid white 2px;
     border-radius: 3px;
     margin-bottom: 10px;
@@ -47,8 +47,8 @@ body{
     border: solid rgb(19, 68, 114) 1px ;
 }
 
-.col-4, .col-8{
-    padding-left: 30px;
+.col-md-4, .col-md-8{
+    padding-left: 40px;
 }
 
 .date-created{

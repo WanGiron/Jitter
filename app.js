@@ -3,34 +3,11 @@ var mysql = require('mysql');
 var path = require("path");
 var bodyParser = require('body-parser');
 
-
 //server //
 var app = express();
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json({ type: 'application/json' }));
-
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }))
-
-// // parse application/json
-// app.use(bodyParser.json())
-
-// app.use(function (req, res) {
-// res.setHeader('Content-Type', 'text/plain')
-// // res.write('you posted:\n')
-// // res.end(JSON.stringify(req.body, null, 2))
-// })
-// app.use(express.urlencoded({extended:true}));
-// app.use(express.json());
-
-
-
-
-
 
 //Static folder//
 app.use(express.static(__dirname + '/assets'));
@@ -41,7 +18,7 @@ app.get("/", function (req, res) {
 });
 
 
-//create connectioin to database//
+//TODO: create connection to database//
 var db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -58,7 +35,7 @@ db.connect(function (err) {
 
 
 
-//to get all posts from db //
+//TODO: get all posts from db //
 app.get('/gettheposts', function (req, res) {
     var sql = 'SELECT * FROM blog_body';
     db.query(sql, function (err, results) {
@@ -71,9 +48,8 @@ app.get('/gettheposts', function (req, res) {
 // to insert posts to db // 
 app.post('/postblog', function(req, res){
     var frontPost = req.body;
-    console.log("this is the body"+JSON.stringify(frontPost));
-    // console.log('this is before'+req.body+'this is after')
-    // console.log('this'+JSON.stringify(req.query))
+    console.log("this is the body" + frontPost);
+    // object to be stored in db
     var post = {
         my_blogs: frontPost.data
     }

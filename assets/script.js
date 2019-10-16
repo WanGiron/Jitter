@@ -1,10 +1,5 @@
 
-
-
-
-
-// get request to database //
-
+// TODO: get all posts from  database //
 var HttpClient = function () {
     this.get = function (aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
@@ -48,12 +43,13 @@ client.get('/gettheposts', function (response) {
 
 
 
-//Post function//
+    //TODO: Post function//
 function sendPost() {
     // var recentPost = document.getElementById('editor1').value;
-    var recentPost = CKEDITOR.instances.editor1.getData();
+    var recentPost = CKEDITOR.instances.editor1.document.getBody().getText();
+    console.log('test'+recentPost);
     //check for validation//
-    if (recentPost === '') {
+    if (recentPost === '\n') {
         alert('Please write something')
     }
     //post request if validation is right//
