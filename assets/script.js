@@ -69,4 +69,6 @@ function sendPost() {
             return response.json();
         })
     }
+    alert('Post added!')
+    window.location.reload();
 }
