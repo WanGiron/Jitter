@@ -21,15 +21,15 @@ client.get('/gettheposts', function (response) {
     console.log(results);
     // loop thru array of blogs from data base //
     results.map(res => {
+        var blogBody = res.my_blogs;
         //creating tags so we can add our values from db //
-        var ptag = document.createElement('P');
+        var ptag = document.createElement('div');
         ptag.setAttribute("class", "post-content");
         var ptag2 = document.createElement('P');
         ptag2.setAttribute("class", "date-created");
         var hr = document.createElement('hr');
-        var node = document.createTextNode(res.my_blogs);
         var node2 = document.createTextNode(res.date_created);
-        ptag.appendChild(node);
+        ptag.innerHTML = blogBody;
         ptag2.appendChild(node2);
         var div2 = document.createElement('div');
         var div = document.getElementById('get-posts');
@@ -43,13 +43,14 @@ client.get('/gettheposts', function (response) {
 
 
 
-    //TODO: Post function//
+//TODO: Post function//
 function sendPost() {
     // var recentPost = document.getElementById('editor1').value;
-    var recentPost = CKEDITOR.instances.editor1.document.getBody().getText();
-    console.log('test'+recentPost);
+    // var recentPost = CKEDITOR.instances.editor1.document.getBody().getText();
+    var recentPost = CKEDITOR.instances.editor1.getData();
+    console.log('test' + recentPost);
     //check for validation//
-    if (recentPost === '\n') {
+    if (recentPost === '') {
         alert('Please write something')
     }
     //post request if validation is right//
@@ -68,7 +69,8 @@ function sendPost() {
         }).then(function (response) {
             return response.json();
         })
+        alert('Post added!')
+        window.location.reload();
     }
-    alert('Post added!')
-    window.location.reload();
+   
 }
