@@ -1,4 +1,4 @@
-var myId = ['test'];
+var myId = [];
 // TODO: get all posts from  database //
 var HttpClient = function () {
     this.get = function (aUrl, aCallback) {
@@ -107,7 +107,7 @@ function updatePost() {
             data: updatedPost
         };
 
-        fetch('/updatedpost/'+myId[1], {
+        fetch('/updatedpost/'+myId[0], {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
