@@ -38,7 +38,7 @@ body{
     margin-bottom: 20px;
 }
 
-#submit-btn{
+#submit-btn, #update-btn{
     font-size: 20px;
     padding: 5px 10px 5px 10px;
     background: rgb(2,0,36);

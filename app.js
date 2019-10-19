@@ -31,7 +31,7 @@ db.connect(function (err) {
         throw err;
     }
     console.log('database connected!');
-})
+});
 
 
 
@@ -42,8 +42,8 @@ app.get('/gettheposts', function (req, res) {
         if (err) throw err;
         console.log(results)
         res.json(results);
-    })
-})
+    });
+});
 
 // to insert posts to db // 
 app.post('/postblog', function(req, res){
@@ -59,9 +59,26 @@ app.post('/postblog', function(req, res){
         console.log(result);
     })
     res.json(frontPost);
-})
+});
+
+// to insert posts to db // 
+app.post('/updatedpost/:id', function(req, res){
+    // var frontPost = req.body;
+    console.log("this is the body" + req.body.data);
+    // object to be stored in db
+    // var post = {
+    //     my_blogs: frontPost.data
+    // }
+    var sql = `UPDATE blog_body set my_blogs = '${req.body.data}' WHERE id = ${req.params.id}`; 
+    db.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log(result);
+    })
+    res.send('Updated!');
+});
+
 
 //server setup //
 app.listen('3000', function () {
     console.log('listening on port 3000');
-})
+});
