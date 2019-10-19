@@ -22,7 +22,7 @@ app.get("/", function (req, res) {
 var db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'password',
+    password: '',
     database: 'blog'
 });
 

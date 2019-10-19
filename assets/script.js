@@ -29,10 +29,7 @@ client.get('/gettheposts', function (response) {
         // setting value as sql ID//
         ptag.setAttribute("value", res.id);
         var span = document.createElement('span');
-        span.innerHTML = '<button id='+ res.id+ ' class="edit-btn" onclick="textArea(this.id)" value=' +res.id+ ' >Edit</button>'
-        // button.setAttribute('class', 'edit-button');
-        // button.setAttribute('value', res.id);
-        // button.addEventListener('click', textArea);
+        span.innerHTML = '<button id='+ res.id+ ' class="edit-btn" onclick="textArea(this.id)" value=' +res.id+ ' >(Edit)</button>'
         var ptag2 = document.createElement('P');
         ptag2.setAttribute("class", "date-created");
         var hr = document.createElement('hr');

@@ -52,8 +52,12 @@ body{
 }
 
 .date-created{
+    /* display: inline-block; */
+    float: left;
     color: gray;
     font-size: 14px;
+    width: fit-content;
+    /* border: solid black 1px; */
 }
 
 .post-content{
@@ -69,6 +73,13 @@ body{
     text-shadow: -3px -3px 0 rgb(255, 255, 255), 3px -3px 0 rgb(255, 255, 255), -3px 3px 0 rgb(255, 255, 255), 3px 3px 0 rgb(255, 255, 255);
 }
 
+.edit-btn{
+    display: inline-block;
+    background: none;
+    border: none;
+    color: rgb(122, 122, 122);
+    float: none;
+}
 
 
 @media screen and (max-width: 768px) {
